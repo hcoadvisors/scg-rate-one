@@ -1,0 +1,129 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCG Syn BCCR", "SCG Syn BCCR\SCG Syn BCCR.csproj", "{856E6029-C462-4767-B4E5-89FA166E9749}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SCG.RateOne.Installer", "SCG.SynBCCR.Installer\SCG.SynBCCR.Installer.vdproj", "{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCG.SyncBCCR.BL", "SCG.SyncBCCR.BL\SCG.SyncBCCR.BL.csproj", "{1CA11505-00D6-46D9-9513-ECCBEB09F96A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCG.SyncBCCR.ConfigurationHost", "SCG.SynINVEL.ControlCenter\SCG.SyncBCCR.ConfigurationHost.csproj", "{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCG.SyncBCCR.Config", "SCG.SyncBCCR.Config\SCG.SyncBCCR.Config.csproj", "{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Debug|Any CPU.Build.0 = Debug|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Debug|x64.ActiveCfg = Debug|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Debug|x86.ActiveCfg = Debug|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|Any CPU.ActiveCfg = Release|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|Any CPU.Build.0 = Release|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|Mixed Platforms.Build.0 = Release|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|x64.ActiveCfg = Release|Any CPU
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|x64.Build.0 = Release|Any CPU
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|x86.ActiveCfg = Release|x86
+		{856E6029-C462-4767-B4E5-89FA166E9749}.Release|x86.Build.0 = Release|x86
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|Any CPU.ActiveCfg = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|Any CPU.Build.0 = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|Mixed Platforms.Build.0 = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|x64.ActiveCfg = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|x64.Build.0 = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Debug|x86.ActiveCfg = Debug
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|Any CPU.ActiveCfg = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|Any CPU.Build.0 = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|Mixed Platforms.ActiveCfg = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|Mixed Platforms.Build.0 = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|x64.ActiveCfg = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|x64.Build.0 = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|x86.ActiveCfg = Release
+		{A7E4C88F-2ECF-4E27-8D6E-8CFF28102734}.Release|x86.Build.0 = Release
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Debug|Any CPU.Build.0 = Debug|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Debug|x64.ActiveCfg = Debug|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Debug|x86.ActiveCfg = Debug|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|x64.ActiveCfg = Release|x64
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|x64.Build.0 = Release|x64
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|x86.ActiveCfg = Release|x86
+		{1CA11505-00D6-46D9-9513-ECCBEB09F96A}.Release|x86.Build.0 = Release|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|Any CPU.Build.0 = Debug|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|x64.ActiveCfg = Debug|x64
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|x64.Build.0 = Debug|x64
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|x86.ActiveCfg = Debug|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Debug|x86.Build.0 = Debug|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|x64.ActiveCfg = Release|x64
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|x64.Build.0 = Release|x64
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|x86.ActiveCfg = Release|x86
+		{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}.Release|x86.Build.0 = Release|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Debug|x86.ActiveCfg = Debug|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|Mixed Platforms.Build.0 = Release|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|x64.ActiveCfg = Release|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|x64.Build.0 = Release|Any CPU
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|x86.ActiveCfg = Release|x86
+		{38F23B2B-13A1-43A3-8C20-DCA5080E7E17}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5D1AADF-0149-4E3B-B40F-24AA617C42EC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.20.89:8080/tfs/desarrollo
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SCG\u0020Syn\u0020BCCR\\SCG\u0020Syn\u0020BCCR.csproj
+		SccProjectName1 = SCG\u0020Syn\u0020BCCR
+		SccLocalPath1 = SCG\u0020Syn\u0020BCCR
+		SccProjectUniqueName2 = SCG.SynBCCR.Installer\\SCG.SynBCCR.Installer.vdproj
+		SccProjectName2 = SCG.SynBCCR.Installer
+		SccLocalPath2 = SCG.SynBCCR.Installer
+		SccProjectUniqueName3 = SCG.SyncBCCR.BL\\SCG.SyncBCCR.BL.csproj
+		SccProjectName3 = SCG.SyncBCCR.BL
+		SccLocalPath3 = SCG.SyncBCCR.BL
+		SccProjectUniqueName4 = SCG.SyncBCCR.Config\\SCG.SyncBCCR.Config.csproj
+		SccProjectName4 = SCG.SyncBCCR.Config
+		SccLocalPath4 = SCG.SyncBCCR.Config
+		SccProjectUniqueName5 = SCG.SynINVEL.ControlCenter\\SCG.SyncBCCR.ConfigurationHost.csproj
+		SccProjectName5 = SCG.SynINVEL.ControlCenter
+		SccLocalPath5 = SCG.SynINVEL.ControlCenter
+	EndGlobalSection
+EndGlobal

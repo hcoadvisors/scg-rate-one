@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SCG.SyncBCCR.BL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SCG_SyncBCCR_BL_cr_fi_bccr_gee_wsindicadoreseconomicos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://gee.bccr.fi.cr/Indicadores/Suscripciones/WS/wsindicadoreseconomicos.asmx</Value>
+    </Setting>
+    <Setting Name="SCG_SyncBCCR_BL_cl_bcentral_si3_SieteWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://si3.bcentral.cl/SieteWS/SieteWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

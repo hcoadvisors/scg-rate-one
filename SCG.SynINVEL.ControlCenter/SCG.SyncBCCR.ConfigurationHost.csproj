@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F15F6BDB-060C-43FD-AB5D-4A4CE81544AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCG.SyncBCCR.ConfigurationHost</RootNamespace>
+    <AssemblyName>SCG.SyncBCCR.ConfigurationHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TipoCambioICO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IrisSkin4">
+      <HintPath>..\Dependencias\IrisSkin4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Nager.Date, Version=1.26.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nager.Date.1.26.3\lib\net45\Nager.Date.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PDSACryptography">
+      <HintPath>..\Dependencias\PDSACryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.Cifrado">
+      <HintPath>..\Dependencias\SCG.Cifrado.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.Controls.Windows">
+      <HintPath>..\Dependencias\SCG.Controls.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.DAC, Version=1.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencias\SCG.DAC.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.GenLic.WMI">
+      <HintPath>..\Dependencias\SCG.GenLic.WMI.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.UX.Windows.ControlsValidator">
+      <HintPath>..\Dependencias\SCG.UX.Windows.ControlsValidator.dll</HintPath>
+    </Reference>
+    <Reference Include="SCG.UX.Windows.TextBox">
+      <HintPath>..\Dependencias\SCG.UX.Windows.TextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ErrorLog.cs" />
+    <Compile Include="Forms\frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguration.Designer.cs">
+      <DependentUpon>frmConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfigurationExchangeRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfigurationExchangeRate.Designer.cs">
+      <DependentUpon>frmConfigurationExchangeRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmExchangeRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExchangeRate.Designer.cs">
+      <DependentUpon>frmExchangeRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs" />
+    <Compile Include="Forms\frmServiceManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmServiceManager.Designer.cs">
+      <DependentUpon>frmServiceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="TipoCambioICO.ico" />
+    <EmbeddedResource Include="Forms\frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfigurationExchangeRate.resx">
+      <DependentUpon>frmConfigurationExchangeRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExchangeRate.resx">
+      <DependentUpon>frmExchangeRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Resources\nosyn - copia.ico" />
+    <None Include="Resources\sissyn2.ico" />
+    <None Include="Resources\yessyn - copia.ico" />
+    <None Include="Resources\yessyn2.png" />
+    <Content Include="Resources\neutral.ico" />
+    <Content Include="Resources\run.ico" />
+    <Content Include="Resources\stop.ico" />
+    <Content Include="Resources\TipoCambioICO.ico" />
+    <Content Include="Scripts\DatabaseObjects.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Settings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sync.ico" />
+    <EmbeddedResource Include="Forms\frmConfiguration.resx">
+      <DependentUpon>frmConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmServiceManager.resx">
+      <DependentUpon>frmServiceManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.DIOption.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ConnectionCompanyDataTable.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ConnectionCompanyRow.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ConnectionCompanyRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ConnectionCompanyRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ExchangeRateTypesDataTable.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ExchangeRateTypesRow.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ExchangeRateTypesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings+ExchangeRateTypesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Settings.datasource" />
+    <None Include="Properties\DataSources\SCG.SyncBCCR.Config.Utility.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Encabezado2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoSCGMiniDegradado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SyncDetenida.png" />
+    <None Include="Resources\iniciar.png" />
+    <None Include="Resources\detener.png" />
+    <None Include="Resources\SyncEnCurso.png" />
+    <None Include="Resources\SyncPendiente.png" />
+    <None Include="Resources\SyncConErrores.png" />
+    <None Include="Resources\SyncExitosa.png" />
+    <Content Include="Resources\no.png" />
+    <None Include="Resources\nosyn.ico" />
+    <None Include="Resources\nosyn2.png" />
+    <None Include="Resources\sissyn.ico" />
+    <Content Include="Resources\SV_1.ico" />
+    <Content Include="Resources\SV_2.ico" />
+    <Content Include="Resources\SV_3.ico" />
+    <Content Include="Resources\yes.png" />
+    <None Include="Resources\yessyn.ico" />
+    <Content Include="SAPWebAPI.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCG.SyncBCCR.Config\SCG.SyncBCCR.Config.csproj">
+      <Project>{38f23b2b-13a1-43a3-8c20-dca5080e7e17}</Project>
+      <Name>SCG.SyncBCCR.Config</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30100}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
