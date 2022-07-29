@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SCG.SyncBCCR.BL</RootNamespace>
     <AssemblyName>SCG.SyncBCCR.BL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -112,6 +112,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WebServiceGUATReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebServiceTRMReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Sync.cs" />
     <Compile Include="Web References\cl.bcentral.si3\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -135,6 +145,44 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.DataVariable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.InfoVariable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.TipoCambioDiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.TipoCambioDiaStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.TipoCambioFechaInicialMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.TipoCambioFechaInicialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.TipoCambioRangoMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.TipoCambioRangoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.VariablesDisponiblesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\SCG.SyncBCCR.BL.WebServiceGUATReference.VariablesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceGUATReference\TipoCambio.wsdl" />
+    <None Include="Service References\WebServiceTRMReference\SCG.SyncBCCR.BL.WebServiceTRMReference.queryTCRMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceTRMReference\SCG.SyncBCCR.BL.WebServiceTRMReference.tcrmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceTRMReference\TCRMServicesWebService.wsdl" />
     <None Include="Web References\cl.bcentral.si3\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -199,6 +247,34 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WebServiceGUATReference\" />
+    <WCFMetadataStorage Include="Service References\WebServiceTRMReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebServiceTRMReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebServiceTRMReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebServiceTRMReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebServiceGUATReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebServiceGUATReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebServiceGUATReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
