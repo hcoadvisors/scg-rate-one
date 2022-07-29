@@ -141,6 +141,8 @@ namespace SCG.SyncBCCR.Config
 
             LocationTypes.Add(new DIOption { Code = "CR", Name = "Costa Rica" });
             LocationTypes.Add(new DIOption { Code = "CL", Name = "Chile" });
+            LocationTypes.Add(new DIOption { Code = "CO", Name = "Colombia" });
+            LocationTypes.Add(new DIOption { Code = "GT", Name = "Guatemala" });
 
             return LocationTypes;
         }

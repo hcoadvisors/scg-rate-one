@@ -9,6 +9,8 @@ using System.Reflection;
 using System.Globalization;
 using SCG.Cifrado;
 using Nager.Date;
+using SCG.SyncBCCR.BL.WebServiceTRMReference;
+using SCG.SyncBCCR.BL.WebServiceGUATReference;
 
 
 namespace SCG.SyncBCCR.BL
@@ -262,8 +264,69 @@ namespace SCG.SyncBCCR.BL
             {
                 throw ex;
             }
+        }
 
-}   
+        public void ConsultarTipoCambioMonedaCO(String appTipoMoneda, SAPbobsCOM.Company appCompany)
+        {
+            NumberFormatInfo numberFormatInfo = GetNumberFormatInfo(appCompany);
+            try
+            {
+                string Fecha = string.Empty;
+                DateTime FechaSAP;
+                DateTime FechaN = DateTime.Now;
+                FechaSAP = FechaN;
+
+                Fecha = DateTime.Now.ToString("yyyy-MM-dd");
+
+                TcrmServicesInterfaceClient client = new TcrmServicesInterfaceClient();
+                tcrmResponse response;
+
+                response = client.queryTCRM(Fecha);
+                double tipocambio = 0;
+
+                //tipocambio = response.value;
+
+                tipocambio = Convert.ToDouble(response.value,numberFormatInfo);
+
+                IngresarTipoCambioMoneda("USD", tipocambio, appCompany, Convert.ToDateTime(FechaSAP.ToShortDateString()));
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private void ConsultarTipoCamioMonedaGT(String appTipoMoneda, SAPbobsCOM.Company appCompany)
+            {
+                NumberFormatInfo numberFormatInfo = GetNumberFormatInfo(appCompany);
+                try
+                {
+
+                    string Fecha = string.Empty;
+                    DateTime FechaSAP;
+                    Fecha = System.DateTime.Now.Day.ToString() + "/" + System.DateTime.Now.Month.ToString() + "/" + System.DateTime.Now.Year.ToString();
+                    DateTime FechaN = DateTime.Now;
+                    FechaSAP = FechaN;
+
+                    TipoCambioSoapClient clientGuat = new TipoCambioSoapClient();
+                    TipoCambioDiaResponseBody responseguat = new TipoCambioDiaResponseBody();
+
+                    double tipocambio = 0;
+
+                responseguat.TipoCambioDiaResult = clientGuat.TipoCambioDia();
+                    tipocambio = Convert.ToDouble(responseguat.TipoCambioDiaResult.CambioDolar[0].referencia,numberFormatInfo);               
+                    IngresarTipoCambioMoneda("USD", tipocambio, appCompany, Convert.ToDateTime(FechaSAP.ToShortDateString()));
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+           
         
         //public void ConsultarTipoCambioChile(String appTipoMoneda,SAPbobsCOM.Company appCompany, String Codigo, String Apikey, String appSumarX)
         //{
@@ -472,7 +535,26 @@ namespace SCG.SyncBCCR.BL
                                             Debuguer("El tipo de cambio: " + row["Code"].ToString() + " ya esta actualizado (no se va actualizar) ");
                                         }
                                     }
+                                else if (connectionConfigRow.Localizacion.Equals("CO"))
+                                {
+                                    //ConsultarTipoCambioMonedaCO(row["Code"].ToString(), oCompany);
+
+                                    if (!ValidarTipoCambio(row["Code"].ToString(), oCompany))
+                                    {
+                                        Debuguer("No se encontro Tipo de cambio se procede a Actualizar");
+                                        ConsultarTipoCambioMonedaCO(row["Code"].ToString(), oCompany);
+                                        Debuguer("Se Actualizó el tipo de cambio: " + row["Code"].ToString() + " Correctamente");
+                                    }
+                                    else
+                                    {
+                                        Debuguer("El tipo de cambio: " + row["Code"].ToString() + " ya esta actualizado (no se va actualizar) ");
+                                    }
                                 }
+                                else if (connectionConfigRow.Localizacion.Equals("GT"))
+                                {
+                                    ConsultarTipoCamioMonedaGT(row["Code"].ToString(), oCompany);
+                                }
+                            }
 
                             }
 

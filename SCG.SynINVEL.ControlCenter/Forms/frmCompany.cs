@@ -142,7 +142,7 @@ namespace SCG.SyncBCCR.ConfigurationHost.Forms
                             _row.Code = int.Parse (txtCode.Text);
                         }
 
-                        if (cboLocalizacion.SelectedValue.ToString().Equals("CR") || (cboLocalizacion.SelectedValue.ToString().Equals("CL") && !string.IsNullOrEmpty(txtWSUser.Text) && !string.IsNullOrEmpty(txtWSPass.Text)))
+                        if (cboLocalizacion.SelectedValue.ToString().Equals("GT") || cboLocalizacion.SelectedValue.ToString().Equals("CO") || cboLocalizacion.SelectedValue.ToString().Equals("CR") || (cboLocalizacion.SelectedValue.ToString().Equals("CL") && !string.IsNullOrEmpty(txtWSUser.Text) && !string.IsNullOrEmpty(txtWSPass.Text)))
                         {
                             _row.Server = txtServer.Text;
                             _row.DbServerType = cboDbServerType.SelectedValue.ToString();
