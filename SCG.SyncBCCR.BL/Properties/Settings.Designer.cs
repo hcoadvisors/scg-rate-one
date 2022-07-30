@@ -42,5 +42,26 @@ namespace SCG.SyncBCCR.BL.Properties {
                 return ((string)(this["SCG_SyncBCCR_BL_cl_bcentral_si3_SieteWS"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.superfinanciera.gov.co/SuperfinancieraWebServiceTRM/TCRMServicesWebSe" +
+            "rvice/TCRMServicesWebService")]
+        public string SCG_SyncBCCR_BL_WebServiceTRMReference_TCRMServicesWebService {
+            get {
+                return ((string)(this["SCG_SyncBCCR_BL_WebServiceTRMReference_TCRMServicesWebService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx")]
+        public string SCG_SyncBCCR_BL_WebServiceGUATReference_TipoCambio {
+            get {
+                return ((string)(this["SCG_SyncBCCR_BL_WebServiceGUATReference_TipoCambio"]));
+            }
+        }
     }
 }

@@ -278,8 +278,8 @@ namespace SCG.SyncBCCR.BL
 
                 Fecha = DateTime.Now.ToString("yyyy-MM-dd");
 
-                TcrmServicesInterfaceClient client = new TcrmServicesInterfaceClient();
-                tcrmResponse response;
+                WebServiceTRMReference.TCRMServicesWebService client = new WebServiceTRMReference.TCRMServicesWebService();
+                WebServiceTRMReference.tcrmResponse response;
 
                 response = client.queryTCRM(Fecha);
                 double tipocambio = 0;
@@ -310,14 +310,14 @@ namespace SCG.SyncBCCR.BL
                     DateTime FechaN = DateTime.Now;
                     FechaSAP = FechaN;
 
-                    TipoCambioSoapClient clientGuat = new TipoCambioSoapClient();
-                    TipoCambioDiaResponseBody responseguat = new TipoCambioDiaResponseBody();
+                WebServiceGUATReference.TipoCambio clientGuat = new WebServiceGUATReference.TipoCambio();
+                WebServiceGUATReference.InfoVariable responseguat = new WebServiceGUATReference.InfoVariable();
 
-                    double tipocambio = 0;
+                double tipocambio = 0;
 
-                responseguat.TipoCambioDiaResult = clientGuat.TipoCambioDia();
-                    tipocambio = Convert.ToDouble(responseguat.TipoCambioDiaResult.CambioDolar[0].referencia,numberFormatInfo);               
-                    IngresarTipoCambioMoneda("USD", tipocambio, appCompany, Convert.ToDateTime(FechaSAP.ToShortDateString()));
+                responseguat = clientGuat.TipoCambioDia();
+                tipocambio = Convert.ToDouble(responseguat.CambioDolar[0].referencia,numberFormatInfo);               
+                IngresarTipoCambioMoneda("USD", tipocambio, appCompany, Convert.ToDateTime(FechaSAP.ToShortDateString()));
 
                 }
                 catch (Exception ex)
