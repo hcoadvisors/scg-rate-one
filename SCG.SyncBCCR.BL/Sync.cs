@@ -50,13 +50,20 @@ namespace SCG.SyncBCCR.BL
 
                 //var fecha = tipoVentaDolar.Tables[0].AsEnumerable().Select(row => row.ItemArray[1]).FirstOrDefault();
 
-                if (Codigo != "0")
+                if (Codigo != "0" && Codigo != "326")
                 {
                     var PorcentajeMoneda = x.ObtenerIndicadoresEconomicos(Codigo, Fecha, Fecha, "SCG", "N", "webapprovalservice@gmail.com", "ER75S0GACE");
                     CompraMoneda = Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())) * compraDolar;
                     VentaMoneda = Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())) * ventaDolar;
                 }
 
+                //Compatibilidad con Franco Suizo
+                if (Codigo == "326")
+                {
+                    var PorcentajeMoneda = x.ObtenerIndicadoresEconomicos(Codigo, Fecha, Fecha, "SCG", "N", "webapprovalservice@gmail.com", "ER75S0GACE");
+                    CompraMoneda = compraDolar * (1 / Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())));
+                    VentaMoneda = ventaDolar * (1 / Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())));
+                }
 
                 if (CompraVenta == "1") //Si es VENTA
                 {
@@ -114,21 +121,15 @@ namespace SCG.SyncBCCR.BL
             decimal TipoCambio = 0;
             DateTime sToday = DateTime.Now;
             //Se inicializan los objetos
+            oSBObob = (SAPbobsCOM.SBObob)appCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoBridge);
+            oRecordSet = (SAPbobsCOM.Recordset)appCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+
             try
             {
-                oSBObob = (SAPbobsCOM.SBObob)appCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoBridge);
-                oRecordSet = (SAPbobsCOM.Recordset)appCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+
                 oRecordSet = oSBObob.GetCurrencyRate(p_TipoCambio, sToday);
                 TipoCambio = Convert.ToDecimal(oRecordSet.Fields.Item(0).Value.ToString(), numberFormatInfo);
 
-                if (oSBObob != null)
-                {
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oSBObob);
-                }
-                if (oRecordSet != null)
-                {
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
-                }
 
                 if (TipoCambio != 0)
                 {
@@ -140,10 +141,27 @@ namespace SCG.SyncBCCR.BL
                 }
 
             }
-            catch (Exception ex)
-            {
+            catch (Exception)
+            {                
                 return false;
             }
+            finally
+            {
+                //Libera los recursos usados por el DI API
+                if (oSBObob != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oSBObob);
+                    oSBObob = null;
+                }
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+
+            }
+
+
 
         }
 
@@ -425,10 +443,11 @@ namespace SCG.SyncBCCR.BL
         public void IngresarTipoCambioMoneda(String Moneda, Double Value, SAPbobsCOM.Company oCompany, DateTime sToday)
         {
             SAPbobsCOM.SBObob oSBObob;
+            oSBObob = (SAPbobsCOM.SBObob)oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoBridge);
+
             try
             {
-                double valor = Value;
-                oSBObob = (SAPbobsCOM.SBObob)oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoBridge);
+                double valor = Value;                
 
                 if (sToday == null)
                 {
@@ -442,15 +461,21 @@ namespace SCG.SyncBCCR.BL
                 }
                 //return valor.ToString();
                 //Se agrego linea para mantenimiento y para liberar recursos
-                if (oSBObob != null)
-                {
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oSBObob);
-                }
+               
 
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                if (oSBObob != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oSBObob);
+                    oSBObob = null;
+                }
+
             }
 
         }
@@ -475,7 +500,7 @@ namespace SCG.SyncBCCR.BL
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -595,6 +620,7 @@ namespace SCG.SyncBCCR.BL
                     {
                         //Se agrego linea para mantenimiento y para liberar recursos
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(oCompany);
+                        oCompany = null;
                     }
 
                 }
