@@ -53,16 +53,23 @@ namespace SCG.SyncBCCR.BL
                 if (Codigo != "0" && Codigo != "326")
                 {
                     var PorcentajeMoneda = x.ObtenerIndicadoresEconomicos(Codigo, Fecha, Fecha, "SCG", "N", "webapprovalservice@gmail.com", "ER75S0GACE");
-                    CompraMoneda = Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())) * compraDolar;
-                    VentaMoneda = Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())) * ventaDolar;
+                    if (PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault() != null)
+                    {
+                        CompraMoneda = Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())) * compraDolar;
+                        VentaMoneda = Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())) * ventaDolar;
+                    }
                 }
 
                 //Compatibilidad con Franco Suizo
                 if (Codigo == "326")
                 {
                     var PorcentajeMoneda = x.ObtenerIndicadoresEconomicos(Codigo, Fecha, Fecha, "SCG", "N", "webapprovalservice@gmail.com", "ER75S0GACE");
-                    CompraMoneda = compraDolar * (1 / Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())));
-                    VentaMoneda = ventaDolar * (1 / Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())));
+                    if (PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault() != null)
+                    {
+                        CompraMoneda = compraDolar * (1 / Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())));
+                        VentaMoneda = ventaDolar * (1 / Convert.ToDouble((PorcentajeMoneda.Tables[0].AsEnumerable().Select(row => row.ItemArray[2]).FirstOrDefault())));
+                    }
+
                 }
 
                 if (CompraVenta == "1") //Si es VENTA
@@ -142,7 +149,7 @@ namespace SCG.SyncBCCR.BL
 
             }
             catch (Exception)
-            {                
+            {
                 return false;
             }
             finally
@@ -447,7 +454,7 @@ namespace SCG.SyncBCCR.BL
 
             try
             {
-                double valor = Value;                
+                double valor = Value;
 
                 if (sToday == null)
                 {
@@ -461,7 +468,7 @@ namespace SCG.SyncBCCR.BL
                 }
                 //return valor.ToString();
                 //Se agrego linea para mantenimiento y para liberar recursos
-               
+
 
             }
             catch (Exception ex)
@@ -603,12 +610,12 @@ namespace SCG.SyncBCCR.BL
             }//Cierra el try
             catch (Exception ex)
             {
-                if (oCompany != null && oCompany.Connected)
-                {
-                    oCompany.Disconnect();
-                    //Se agrego linea para mantenimiento y para liberar recursos
-                    //System.Runtime.InteropServices.Marshal.ReleaseComObject(oCompany);
-                }
+                //if (oCompany != null && oCompany.Connected)
+                //{
+                //    oCompany.Disconnect();
+                //    //Se agrego linea para mantenimiento y para liberar recursos
+                //    //System.Runtime.InteropServices.Marshal.ReleaseComObject(oCompany);
+                //}
                 throw ex;
             }
             finally
